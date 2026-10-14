@@ -44,7 +44,11 @@
     .detail-value{font-size:1.05rem;font-weight:600}
     .muted{color:var(--muted)}
     .media-card{overflow:hidden;padding:0}
-    .media-cover{min-height:155px;display:grid;place-items:center;background:linear-gradient(135deg,#0c2a4d,#0c1640 60%,#071426);color:var(--cyan);font-size:3.2rem;border-bottom:1px solid var(--line)}
+    .media-cover{height:190px;position:relative;overflow:hidden;background:linear-gradient(135deg,#0c2a4d,#0c1640 60%,#071426);border-bottom:1px solid var(--line)}
+    .media-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+    .glass-card:hover .media-cover img{transform:scale(1.045)}
+    .media-cover:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(3,8,18,.65));pointer-events:none}
+    .media-cover .play-mark{position:absolute;z-index:1;right:14px;bottom:12px;color:white;background:rgba(4,12,24,.8);border:1px solid rgba(53,217,255,.6);border-radius:50%;width:42px;height:42px;display:grid;place-items:center;font-size:1.35rem}
     .media-body{padding:20px}
     .hobby-icon{font-size:2rem;color:var(--cyan);margin-bottom:15px}
     .social-link{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:999px;margin:4px}
@@ -121,21 +125,179 @@
 
 <section id="multimedia">
   <div class="container">
-    <div class="eyebrow">Sonidos y videos</div><h2 class="section-title">Mi multimedia</h2><div class="accent-line"></div>
-    <p class="section-subtitle">Una selección de música y videos que forman parte de mis gustos.</p>
-    <h3 class="h5 mb-3"><i class="bi bi-music-note-beamed me-2" style="color:var(--cyan)"></i>Música</h3>
+    <div class="eyebrow">Sonidos y videos</div>
+    <h2 class="section-title">Mi multimedia</h2>
+    <div class="accent-line"></div>
+    <p class="section-subtitle">
+      Una selección de música y videos que forman parte de mis gustos.
+    </p>
+
+    <!-- MÚSICA -->
+    <h3 class="h5 mb-3">
+      <i class="bi bi-music-note-beamed me-2" style="color:var(--cyan)"></i>
+      Música
+    </h3>
+
     <div class="row g-4 mb-5">
-      <div class="col-md-6 col-lg-4"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-soundwave"></i></div><div class="media-body"><h3 class="h5">Mi canción 1</h3><p class="muted">Una de mis selecciones musicales.</p><a class="btn btn-outline-cyan btn-sm" href="https://youtu.be/pvy9km7g6fw?si=8lOq8aHJ1QkU-3us" target="_blank" rel="noopener">Escuchar <i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div>
-      <div class="col-md-6 col-lg-4"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-disc"></i></div><div class="media-body"><h3 class="h5">Mi canción 2</h3><p class="muted">Otra de mis canciones favoritas.</p><a class="btn btn-outline-cyan btn-sm" href="https://youtu.be/fb_S4aWI6Og?si=CDXCx7Jvl0I_9ETb" target="_blank" rel="noopener">Escuchar <i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div>
-      <div class="col-md-6 col-lg-4"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-headphones"></i></div><div class="media-body"><h3 class="h5">Mi canción 3</h3><p class="muted">Música para acompañar el día.</p><a class="btn btn-outline-cyan btn-sm" href="https://youtu.be/RLDoLQQ4uP4?si=5ZcRd9mWy5NsaCcm" target="_blank" rel="noopener">Escuchar <i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div>
+
+      <!-- MÚSICA 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="glass-card media-card">
+          <a class="media-cover d-block"
+             href="https://youtu.be/pvy9km7g6fw"
+             target="_blank" rel="noopener"
+             aria-label="Escuchar Bury the Light">
+            <img src="https://img.youtube.com/vi/pvy9km7g6fw/hqdefault.jpg"
+                 alt="Portada de Bury the Light" loading="lazy">
+            <span class="play-mark"><i class="bi bi-play-fill"></i></span>
+          </a>
+          <div class="media-body">
+            <h3 class="h5">Bury the Light</h3>
+            <p class="muted">
+              Tema de Vergil en Devil May Cry 5, con un sonido intenso de rock y metal.
+            </p>
+            <a class="btn btn-outline-cyan btn-sm"
+               href="https://youtu.be/pvy9km7g6fw"
+               target="_blank" rel="noopener">
+              Escuchar en YouTube
+              <i class="bi bi-box-arrow-up-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÚSICA 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="glass-card media-card">
+          <a class="media-cover d-block"
+             href="https://youtu.be/fb_S4aWI6Og"
+             target="_blank" rel="noopener"
+             aria-label="Escuchar música de Michael Kiwanuka">
+            <img src="https://img.youtube.com/vi/fb_S4aWI6Og/hqdefault.jpg"
+                 alt="Miniatura de Michael Kiwanuka" loading="lazy">
+            <span class="play-mark"><i class="bi bi-play-fill"></i></span>
+          </a>
+          <div class="media-body">
+            <h3 class="h5">Michael Kiwanuka</h3>
+            <p class="muted">
+              Una selección con un sonido soul cálido y una atmósfera tranquila.
+            </p>
+            <a class="btn btn-outline-cyan btn-sm"
+               href="https://youtu.be/fb_S4aWI6Og"
+               target="_blank" rel="noopener">
+              Escuchar en YouTube
+              <i class="bi bi-box-arrow-up-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÚSICA 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="glass-card media-card">
+          <a class="media-cover d-block"
+             href="https://youtu.be/RLDoLQQ4uP4"
+             target="_blank" rel="noopener"
+             aria-label="Escuchar Clavada de Blasphemous 2">
+            <img src="https://img.youtube.com/vi/RLDoLQQ4uP4/hqdefault.jpg"
+                 alt="Miniatura de Clavada de Blasphemous 2" loading="lazy">
+            <span class="play-mark"><i class="bi bi-play-fill"></i></span>
+          </a>
+          <div class="media-body">
+            <h3 class="h5">Clavada — Blasphemous 2</h3>
+            <p class="muted">
+              Pieza de la banda sonora de Blasphemous 2, con una atmósfera oscura y épica.
+            </p>
+            <a class="btn btn-outline-cyan btn-sm"
+               href="https://youtu.be/RLDoLQQ4uP4"
+               target="_blank" rel="noopener">
+              Escuchar en YouTube
+              <i class="bi bi-box-arrow-up-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <h3 class="h5 mb-3"><i class="bi bi-play-btn me-2" style="color:var(--cyan)"></i>Videos</h3>
+
+    <!-- VIDEOS -->
+    <h3 class="h5 mb-3">
+      <i class="bi bi-play-btn me-2" style="color:var(--cyan)"></i>
+      Videos
+    </h3>
+
     <div class="row g-4">
-      <div class="col-md-6"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-youtube"></i></div><div class="media-body"><h3 class="h5">Video destacado 1</h3><p class="muted">Reproduce el video en una ventana emergente.</p><button class="btn btn-cyan btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="VnlkPqDwKXU" data-title="Video destacado 1"><i class="bi bi-play-fill me-1"></i>Reproducir</button></div></div></div>
-      <div class="col-md-6"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-film"></i></div><div class="media-body"><h3 class="h5">Video destacado 2</h3><p class="muted">También puedes cambiar estos videos por otros que prefieras.</p><button class="btn btn-cyan btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="mCLWIVPzIHA" data-title="Video destacado 2"><i class="bi bi-play-fill me-1"></i>Reproducir</button></div></div></div>
+
+      <!-- VIDEO 1 -->
+      <div class="col-md-6">
+        <div class="glass-card media-card">
+          <button type="button"
+                  class="media-cover w-100 border-0 p-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  data-video="nDfn-o2Pr_8"
+                  data-title="Video destacado 1"
+                  aria-label="Reproducir video destacado 1">
+            <img src="https://img.youtube.com/vi/nDfn-o2Pr_8/hqdefault.jpg"
+                 alt="Miniatura del video destacado 1" loading="lazy">
+            <span class="play-mark"><i class="bi bi-play-fill"></i></span>
+          </button>
+
+          <div class="media-body">
+            <h3 class="h5">Video destacado 1</h3>
+            <p class="muted">
+              Un video seleccionado para mi colección personal.
+            </p>
+            <button type="button"
+                    class="btn btn-cyan btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#videoModal"
+                    data-video="nDfn-o2Pr_8"
+                    data-title="Video destacado 1">
+              <i class="bi bi-play-fill me-1"></i>
+              Reproducir video
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO 2 -->
+      <div class="col-md-6">
+        <div class="glass-card media-card">
+          <button type="button"
+                  class="media-cover w-100 border-0 p-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  data-video="M0v3ROm0oPw"
+                  data-title="Video destacado 2"
+                  aria-label="Reproducir video destacado 2">
+            <img src="https://img.youtube.com/vi/M0v3ROm0oPw/hqdefault.jpg"
+                 alt="Miniatura del video destacado 2" loading="lazy">
+            <span class="play-mark"><i class="bi bi-play-fill"></i></span>
+          </button>
+
+          <div class="media-body">
+            <h3 class="h5">Video destacado 2</h3>
+            <p class="muted">
+              Otro video que forma parte de mis favoritos.
+            </p>
+            <button type="button"
+                    class="btn btn-cyan btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#videoModal"
+                    data-video="M0v3ROm0oPw"
+                    data-title="Video destacado 2">
+              <i class="bi bi-play-fill me-1"></i>
+              Reproducir video
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <section id="pasatiempos" style="background:rgba(10,27,49,.45)">
   <div class="container">
