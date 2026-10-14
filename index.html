@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="Perfil personal y académico de Alejandro Fabian Pacheco Calderón, estudiante de Ingeniería de Sistemas en la UPDS.">
+  <title>Alejandro Pacheco | Bury the Light</title>
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root{--bg:#050b16;--panel:#0b1930;--panel2:#0d2340;--cyan:#35d9ff;--blue:#267dff;--text:#eaf5ff;--muted:#a9bed5;--line:rgba(53,217,255,.25)}
+    *{scroll-behavior:smooth}
+    body{background:radial-gradient(ellipse at top right,#102d53 0,transparent 42%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
+    .navbar{background:rgba(4,11,23,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .navbar-brand,.section-title,.hero-title{font-family:Orbitron,Arial,sans-serif}
+    .navbar-brand{color:var(--cyan)!important;letter-spacing:1px}
+    .nav-link{color:#dcecff!important}.nav-link:hover{color:var(--cyan)!important}
+    .hero{min-height:85vh;display:flex;align-items:center;padding:110px 0 70px}
+    .eyebrow{color:var(--cyan);letter-spacing:3px;text-transform:uppercase;font-size:.82rem;font-weight:700}
+    .hero-title{font-size:clamp(2.4rem,6vw,5rem);font-weight:800;line-height:1.08;text-shadow:0 0 25px rgba(53,217,255,.18)}
+    .hero-title span{color:var(--cyan)}
+    .hero-copy{color:var(--muted);font-size:1.08rem;max-width:650px;line-height:1.8}
+    .btn-cyan{background:linear-gradient(100deg,var(--blue),var(--cyan));color:#04101d;border:0;font-weight:800;border-radius:999px;padding:12px 22px}
+    .btn-cyan:hover{color:#04101d;filter:brightness(1.1);transform:translateY(-1px)}
+    .btn-outline-cyan{border:1px solid var(--cyan);color:var(--cyan);border-radius:999px;padding:11px 20px}
+    .btn-outline-cyan:hover{background:var(--cyan);color:#06101d}
+    .profile-frame{max-width:340px;margin:auto;padding:8px;border:1px solid var(--cyan);border-radius:24px;box-shadow:0 0 35px rgba(38,125,255,.22);background:linear-gradient(145deg,rgba(53,217,255,.15),rgba(38,125,255,.03))}
+    .profile-photo{width:100%;height:400px;object-fit:cover;border-radius:18px;background:linear-gradient(145deg,#102d53,#071426);display:block}
+    .photo-note{font-size:.8rem;color:var(--muted);text-align:center;margin:10px 0 2px}
+    section{padding:76px 0;scroll-margin-top:75px}
+    .section-title{font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:12px}
+    .section-subtitle{color:var(--muted);margin-bottom:34px}
+    .accent-line{width:76px;height:4px;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--cyan));margin:0 0 24px}
+    .glass-card{height:100%;padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(13,35,64,.9),rgba(8,20,38,.9));transition:.2s}
+    .glass-card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .icon-box{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:rgba(53,217,255,.1);color:var(--cyan);font-size:1.5rem;margin-bottom:16px}
+    .detail-label{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--cyan);font-weight:700;margin-bottom:7px}
+    .detail-value{font-size:1.05rem;font-weight:600}
+    .muted{color:var(--muted)}
+    .media-card{overflow:hidden;padding:0}
+    .media-cover{min-height:155px;display:grid;place-items:center;background:linear-gradient(135deg,#0c2a4d,#0c1640 60%,#071426);color:var(--cyan);font-size:3.2rem;border-bottom:1px solid var(--line)}
+    .media-body{padding:20px}
+    .hobby-icon{font-size:2rem;color:var(--cyan);margin-bottom:15px}
+    .social-link{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:999px;margin:4px}
+    .social-link:hover{color:var(--cyan);border-color:var(--cyan)}
+    .quote{border-left:3px solid var(--cyan);padding:18px 22px;background:rgba(53,217,255,.06);color:#dceeff;font-size:1.1rem;border-radius:0 12px 12px 0}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);background:#030812}
+    .install-banner{position:fixed;z-index:1050;bottom:16px;left:16px;right:16px;max-width:680px;margin:auto;background:#0b1930;border:1px solid var(--cyan);box-shadow:0 10px 35px #0009;border-radius:18px;padding:16px;display:none}
+    .install-banner.show{display:block}
+    .btn-close-custom{border:0;background:transparent;color:var(--muted);font-size:1.3rem}
+    .modal-content{background:#08172a;border:1px solid var(--line);color:var(--text)}
+    .ratio iframe{border:0}
+    @media(max-width:767px){.hero{min-height:auto;padding-top:110px}.profile-frame{max-width:280px;margin-top:36px}.profile-photo{height:320px}section{padding:58px 0}}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio"><i class="bi bi-lightning-charge-fill me-2"></i>APC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+        <li class="nav-item"><a class="nav-link" href="#perfil">Perfil académico</a></li>
+        <li class="nav-item"><a class="nav-link" href="#multimedia">Multimedia</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pasatiempos">Pasatiempos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="container"><div class="row align-items-center g-5">
+    <div class="col-lg-7">
+      <div class="eyebrow mb-3">Perfil personal · UPDS</div>
+      <h1 class="hero-title mb-4">Alejandro Fabian<br><span>Pacheco Calderón</span></h1>
+      <p class="hero-copy">Estudiante de Ingeniería de Sistemas, amante de los videojuegos, la música, el manga y la fantasía. Construyendo mi camino, un proyecto a la vez.</p>
+      <div class="d-flex flex-wrap gap-3 mt-4">
+        <a class="btn btn-cyan" href="#sobre-mi"><i class="bi bi-person-lines-fill me-2"></i>Conóceme</a>
+        <a class="btn btn-outline-cyan" href="#multimedia"><i class="bi bi-play-circle me-2"></i>Mi multimedia</a>
+      </div>
+      <p class="mt-4 muted"><i class="bi bi-geo-alt me-2"></i>La Paz, Bolivia</p>
+    </div>
+    <div class="col-lg-5">
+      <div class="profile-frame">
+        <img class="profile-photo" src="foto.jpg" alt="Fotografía de Alejandro" onerror="this.style.display='none';document.getElementById('photoFallback').style.display='grid'">
+        <div id="photoFallback" class="profile-photo" style="display:none;place-items:center;text-align:center;padding:30px"><div><i class="bi bi-person-bounding-box" style="font-size:5rem;color:var(--cyan)"></i><p class="mt-3 mb-0">Coloca tu fotografía como <strong>foto.jpg</strong></p></div></div>
+        <p class="photo-note">Mi espacio personal</p>
+      </div>
+    </div>
+  </div></div>
+</header>
+
+<section id="sobre-mi">
+  <div class="container">
+    <div class="eyebrow">Quién soy</div><h2 class="section-title">Sobre mí</h2><div class="accent-line"></div>
+    <div class="row g-4">
+      <div class="col-lg-7"><div class="glass-card"><p class="muted mb-3">Me interesa la tecnología y cómo la programación puede convertir ideas en soluciones reales. En mi tiempo libre disfruto jugar videojuegos, escuchar música y leer historias que me transportan a otros mundos.</p><div class="quote">“Bury the Light” — avanzar con determinación, incluso cuando el camino se pone difícil.</div></div></div>
+      <div class="col-lg-5"><div class="glass-card"><div class="detail-label">Mi videojuego favorito</div><div class="detail-value mb-3"><i class="bi bi-controller me-2" style="color:var(--cyan)"></i>God of War</div><div class="detail-label">Lo que me gusta leer</div><div class="detail-value"><i class="bi bi-book-half me-2" style="color:var(--cyan)"></i>Manga y fantasía</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="perfil" style="background:rgba(10,27,49,.45)">
+  <div class="container">
+    <div class="eyebrow">Mi camino</div><h2 class="section-title">Perfil académico y personal</h2><div class="accent-line"></div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="glass-card"><div class="icon-box"><i class="bi bi-mortarboard"></i></div><div class="detail-label">Carrera</div><div class="detail-value">Ingeniería de Sistemas</div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass-card"><div class="icon-box"><i class="bi bi-building"></i></div><div class="detail-label">Universidad</div><div class="detail-value">Universidad Privada Domingo Savio (UPDS)</div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass-card"><div class="icon-box"><i class="bi bi-flag"></i></div><div class="detail-label">Mi meta</div><div class="detail-value">Completar la carrera y graduarme profesionalmente.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="multimedia">
+  <div class="container">
+    <div class="eyebrow">Sonidos y videos</div><h2 class="section-title">Mi multimedia</h2><div class="accent-line"></div>
+    <p class="section-subtitle">Una selección de música y videos que forman parte de mis gustos.</p>
+    <h3 class="h5 mb-3"><i class="bi bi-music-note-beamed me-2" style="color:var(--cyan)"></i>Música</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-4"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-soundwave"></i></div><div class="media-body"><h3 class="h5">Mi canción 1</h3><p class="muted">Una de mis selecciones musicales.</p><a class="btn btn-outline-cyan btn-sm" href="https://youtu.be/pvy9km7g6fw?si=8lOq8aHJ1QkU-3us" target="_blank" rel="noopener">Escuchar <i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-disc"></i></div><div class="media-body"><h3 class="h5">Mi canción 2</h3><p class="muted">Otra de mis canciones favoritas.</p><a class="btn btn-outline-cyan btn-sm" href="https://youtu.be/fb_S4aWI6Og?si=CDXCx7Jvl0I_9ETb" target="_blank" rel="noopener">Escuchar <i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-headphones"></i></div><div class="media-body"><h3 class="h5">Mi canción 3</h3><p class="muted">Música para acompañar el día.</p><a class="btn btn-outline-cyan btn-sm" href="https://youtu.be/RLDoLQQ4uP4?si=5ZcRd9mWy5NsaCcm" target="_blank" rel="noopener">Escuchar <i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div>
+    </div>
+    <h3 class="h5 mb-3"><i class="bi bi-play-btn me-2" style="color:var(--cyan)"></i>Videos</h3>
+    <div class="row g-4">
+      <div class="col-md-6"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-youtube"></i></div><div class="media-body"><h3 class="h5">Video destacado 1</h3><p class="muted">Reproduce el video en una ventana emergente.</p><button class="btn btn-cyan btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="VnlkPqDwKXU" data-title="Video destacado 1"><i class="bi bi-play-fill me-1"></i>Reproducir</button></div></div></div>
+      <div class="col-md-6"><div class="glass-card media-card"><div class="media-cover"><i class="bi bi-film"></i></div><div class="media-body"><h3 class="h5">Video destacado 2</h3><p class="muted">También puedes cambiar estos videos por otros que prefieras.</p><button class="btn btn-cyan btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="mCLWIVPzIHA" data-title="Video destacado 2"><i class="bi bi-play-fill me-1"></i>Reproducir</button></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pasatiempos" style="background:rgba(10,27,49,.45)">
+  <div class="container">
+    <div class="eyebrow">Fuera del estudio</div><h2 class="section-title">Mis pasatiempos</h2><div class="accent-line"></div>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="glass-card"><div class="hobby-icon"><i class="bi bi-controller"></i></div><h3 class="h5">Videojuegos</h3><p class="muted mb-0">Disfruto los videojuegos, especialmente God of War.</p></div></div>
+      <div class="col-md-4"><div class="glass-card"><div class="hobby-icon"><i class="bi bi-music-note-list"></i></div><h3 class="h5">Música</h3><p class="muted mb-0">Escuchar música para relajarme y acompañar mis actividades.</p></div></div>
+      <div class="col-md-4"><div class="glass-card"><div class="hobby-icon"><i class="bi bi-book"></i></div><h3 class="h5">Lectura</h3><p class="muted mb-0">Leer manga y relatos de fantasía.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container text-center">
+    <div class="eyebrow">Encuéntrame</div><h2 class="section-title">Contacto y enlaces</h2><div class="accent-line mx-auto"></div>
+    <p class="section-subtitle">Puedes visitar mi repositorio para ver mis proyectos.</p>
+    <a class="social-link" href="https://github.com/alejandro2005exe-byte/prueba" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+    <p class="muted mt-4"><i class="bi bi-geo-alt me-2"></i>La Paz, Bolivia</p>
+  </div>
+</section>
+
+<footer><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© <span id="year"></span> Alejandro Fabian Pacheco Calderón</span><span>Diseñado con estilo azul eléctrico · UPDS</span></div></footer>
+
+<div class="install-banner" id="installBanner">
+  <div class="d-flex align-items-start gap-3">
+    <div class="icon-box mb-0 flex-shrink-0"><i class="bi bi-phone"></i></div>
+    <div class="flex-grow-1"><strong>Instala mi perfil</strong><p class="muted small mb-3">Añade esta página a tu dispositivo para abrirla fácilmente.</p><button id="installButton" class="btn btn-cyan btn-sm">Instalar aplicación</button></div>
+    <button class="btn-close-custom" id="dismissInstall" aria-label="Cerrar banner"><i class="bi bi-x-lg"></i></button>
+  </div>
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="videoModalTitle">Video</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body"><div class="ratio ratio-16x9"><iframe id="videoFrame" src="" title="Reproductor de video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div></div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const videoModal = document.getElementById('videoModal');
+  videoModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    const videoId = button.getAttribute('data-video');
+    document.getElementById('videoModalTitle').textContent = button.getAttribute('data-title') || 'Video';
+    document.getElementById('videoFrame').src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+  });
+  videoModal.addEventListener('hidden.bs.modal', () => {
+    document.getElementById('videoFrame').src = '';
+  });
+
+  // Mostrar banner solo si el navegador permite instalación nativa.
+  let installPrompt = null;
+  const installBanner = document.getElementById('installBanner');
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    installPrompt = event;
+    installBanner.classList.add('show');
+  });
+  document.getElementById('installButton').addEventListener('click', async () => {
+    if (!installPrompt) {
+      alert('Si no aparece la opción de instalación, abre el menú del navegador y elige “Instalar aplicación” o “Añadir a pantalla de inicio”.');
+      return;
+    }
+    installPrompt.prompt();
+    await installPrompt.userChoice;
+    installPrompt = null;
+    installBanner.classList.remove('show');
+  });
+  document.getElementById('dismissInstall').addEventListener('click', () => installBanner.classList.remove('show'));
+
+  // Registrar service worker para capacidades básicas sin conexión.
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js').catch(err => console.warn('No se pudo registrar el service worker:', err));
+    });
+  }
+</script>
+</body>
+</html>
